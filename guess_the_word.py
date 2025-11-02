@@ -12,6 +12,7 @@ import random
 # create simple list of words
 word_list = ["GHOSTS", "GOBLINS", "VAMPIRES", "WEREWOLVES", "ZOMBIES", "FAIRIES"]
 
+# 
 
 
 # Functions
@@ -19,8 +20,6 @@ word_list = ["GHOSTS", "GOBLINS", "VAMPIRES", "WEREWOLVES", "ZOMBIES", "FAIRIES"
 # function to choose a random word
 def word_rand(word_list):
     return random.choice(word_list)
-
-print(word_rand(word_list))
 
 
 # function to hide the word and reveal letters
@@ -34,3 +33,21 @@ def hide_word(the_word, guessed_letters):
     return hidden
 
 
+# function to see if all the letters have been guessed
+def word_complete(the_word, guessed_letters):
+    for ch in the_word:
+        if ch not in guessed_letters:
+            return False
+    return True
+
+# testing
+
+guessed_letters = ["G", "H", "O", "S", "T"]
+the_word = "GHOSTS"
+
+print(hide_word(the_word, guessed_letters))
+print(word_complete(the_word, guessed_letters))
+
+guessed_letters = ["G", "H", "O", "S", "r"]
+print(hide_word(the_word, guessed_letters))
+print(word_complete(the_word, guessed_letters))
