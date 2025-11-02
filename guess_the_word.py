@@ -9,9 +9,19 @@
 #import libraries
 import random
 
-
 # create simple list of words
 word_list = ["GHOSTS", "GOBLINS", "VAMPIRES", "WEREWOLVES", "ZOMBIES", "FAIRIES"]
+
+
+
+# Functions
+
+# function to choose a random word
+def word_rand(word_list):
+    return random.choice(word_list)
+
+print(word_rand(word_list))
+
 
 # function to hide the word and reveal letters
 def hide_word(the_word, guessed_letters):
@@ -23,5 +33,4 @@ def hide_word(the_word, guessed_letters):
             hidden += "_"
     return hidden
 
-#test function
-print (hide_word("TestingWords", {"r", "S", "T", "L", "n","E"}))
+
